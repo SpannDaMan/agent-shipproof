@@ -1,0 +1,12 @@
+name: Feature request
+description: Propose a bounded receipt or verification improvement.
+body:
+  - type: textarea
+    attributes: {label: Evidence job to be done}
+    validations: {required: true}
+  - type: textarea
+    attributes: {label: Five-minute demonstration}
+    validations: {required: true}
+  - type: textarea
+    attributes: {label: Privacy and claim-boundary risks}
+    validations: {required: true}

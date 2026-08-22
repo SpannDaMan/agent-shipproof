@@ -1,0 +1,30 @@
+{
+  "name": "agent-shipproof",
+  "version": "0.1.1",
+  "description": "Record portable evidence of observed commands, files, and Git state.",
+  "author": {"name": "Orbral", "url": "https://github.com/SpannDaMan"},
+  "homepage": "https://github.com/SpannDaMan/agent-shipproof",
+  "repository": "https://github.com/SpannDaMan/agent-shipproof",
+  "license": "MIT",
+  "keywords": ["codex", "agents", "receipts", "verification", "git"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent ShipProof",
+    "shortDescription": "Record what the agent ran.",
+    "longDescription": "Agent ShipProof creates a deterministic Observed Evidence Envelope from command results, selected file hashes, Git state, environment facts, and explicit omissions. It records observations without claiming correctness, security, identity, authorization, certification, or sandboxing.",
+    "developerName": "Orbral",
+    "category": "Developer Tools",
+    "capabilities": ["Local", "Observed evidence envelopes", "Deterministic normalization", "Git and CI receipts", "No credentials"],
+    "websiteURL": "https://github.com/SpannDaMan/agent-shipproof",
+    "defaultPrompt": [
+      "Record an evidence receipt for this agent run.",
+      "Produce a receipt from these command logs and selected files.",
+      "Show a GitHub Actions example using ShipProof."
+    ],
+    "brandColor": "#0183E0",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png",
+    "screenshots": ["./assets/screenshot1.png"]
+  }
+}

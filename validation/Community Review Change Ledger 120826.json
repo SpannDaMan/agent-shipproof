@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "product": "Agent ShipProof",
+  "product_revision_sha256": "44a42d50800af17709292a957fd22f7deee78c9102b52eebc813a06346b5f63f",
+  "review_type": "synthetic_github_community_pretest",
+  "review_subtype": "focus_group_reconciliation",
+  "panel_size": 6,
+  "source_receipt": "validation/Synthetic Community Focus Group 120826.json",
+  "status": "historical",
+  "current_binding_status": "stale_historical_not_release_evidence",
+  "resolution_summary": {
+    "implemented": 7,
+    "already_satisfied": 4,
+    "retained_disclosed_limitations": 2,
+    "rejected_inaccurate_or_out_of_scope": 3
+  },
+  "findings": [
+    {
+      "severity": "P0",
+      "finding": "Large output could force the excerpt reader to load the entire stream and command output lacked an explicit ceiling.",
+      "resolution": "implemented",
+      "changes": [
+        "Excerpt reads only the first 4 KB instead of loading the complete stream.",
+        "Combined stdout and stderr default ceiling is 10 MB.",
+        "Ceiling termination is recorded as output_limit_exceeded with observed exit 125.",
+        "Receipt JSON remains bounded while full captured-byte hashes are retained."
+      ],
+      "acceptance_evidence": [
+        "tests/test_shipproof.py::test_output_limit_bounds_receipt_evidence",
+        "evals: output_limit_recorded_as_125"
+      ]
+    },
+    {
+      "severity": "P0",
+      "finding": "Receipt output path could be supplied outside the declared root.",
+      "resolution": "implemented",
+      "changes": [
+        "Receipt path and resolved parent must stay inside the root before a command is run or a receipt is written."
+      ],
+      "acceptance_evidence": [
+        "tests/test_shipproof.py::test_receipt_path_outside_root_is_rejected",
+        "evals: outside_receipt_path_rejected"
+      ]
+    },
+    {
+      "severity": "P0",
+      "finding": "Known AWS-style credentials could remain in display excerpts.",
+      "resolution": "implemented",
+      "changes": [
+        "Added AWS access-key IDs, labeled secret-access keys/passwords, and private-key block shapes to best-effort redaction.",
+        "Kept the explicit warning that arbitrary secrets may remain."
+      ],
+      "acceptance_evidence": [
+        "tests/test_shipproof.py::test_output_excerpt_redacts_aws_shapes",
+        "evals: aws_output_redacted"
+      ]
+    },
+    {
+      "severity": "P1",
+      "finding": "Missing HMAC key, wrong key, key-id tamper, or signed-to-unsigned downgrade might be accepted.",
+      "resolution": "already_satisfied_and_hardened",
+      "changes": [
+        "Existing negative tests already rejected all four cases when authenticated verification is requested.",
+        "Authentication now rejects unexpected fields and malformed tags."
+      ],
+      "acceptance_evidence": [
+        "test_missing_hmac_key_is_tool_error",
+        "test_wrong_hmac_key_fails",
+        "test_hmac_key_id_tamper_fails",
+        "test_hmac_key_rejects_unsigned_receipt",
+        "test_hmac_extra_field_is_rejected"
+      ]
+    },
+    {
+      "severity": "P1",
+      "finding": "Receipt schema and runtime verification should reject a self-consistent but malformed receipt.",
+      "resolution": "implemented",
+      "changes": [
+        "Expanded the bundled JSON Schema to the full v1 body, command, selection, artifact, Git, and integrity contract.",
+        "Added strict runtime body validation after integrity or HMAC succeeds and before any receipt-controlled path is used."
+      ],
+      "acceptance_evidence": [
+        "test_self_consistent_but_malformed_receipt_is_rejected",
+        "evals: self_consistent_malformed_receipt_rejected"
+      ]
+    },
+    {
+      "severity": "P2",
+      "finding": "Timeout and execution authority could be misread in CI or on Windows.",
+      "resolution": "implemented",
+      "changes": [
+        "README, receipt contract, security policy, skill, and CLI help now state that the command uses caller permissions and is not sandboxed.",
+        "Timeout 124 and output-limit 125 are documented as cross-platform observed receipt codes; the ShipProof CLI returns 1 for either non-passing run."
+      ]
+    },
+    {
+      "severity": "P2",
+      "finding": "Codex quick-start and contribution instructions were hard to discover.",
+      "resolution": "implemented_or_linked",
+      "changes": [
+        "Added a copy-paste Codex request with narrow claims and includes.",
+        "Linked the pre-existing CONTRIBUTING.md and expanded its local verification commands."
+      ]
+    },
+    {
+      "severity": "P2",
+      "finding": "Live selected-symlink creation test is skipped when Windows privileges do not permit symlink creation.",
+      "resolution": "retained_disclosed_limitation",
+      "reason": "The production branch rejects selected paths for which Path.is_symlink is true, and the test runs when the OS grants symlink creation. The private pilot does not change host Developer Mode or elevation."
+    },
+    {
+      "severity": "P3",
+      "finding": "Add MSI, Chocolatey, a prebuilt wheel, dry-run mode, nonce, and pluggable redaction.",
+      "resolution": "deferred_post_pilot",
+      "reason": "These expand distribution or API surface and are not required to test the v0.1 receipt contract."
+    },
+    {
+      "severity": "P2",
+      "finding": "The repository lacked CONTRIBUTING.md and Code of Conduct.",
+      "resolution": "rejected_as_factually_inaccurate",
+      "reason": "Both files existed before the panel; discoverability was improved instead."
+    },
+    {
+      "severity": "P0",
+      "finding": "The receipt stored the full output in its excerpt field.",
+      "resolution": "rejected_as_factually_inaccurate_but_related_defect_fixed",
+      "reason": "The receipt excerpt was already limited to 4 KB. The implementation did read the complete temporary stream into memory before slicing; that real defect was fixed."
+    }
+  ],
+  "verification": {
+    "unit_tests": {
+      "status": "pass",
+      "passed": 37,
+      "skipped": 1,
+      "total": 38
+    },
+    "evals": {
+      "status": "pass",
+      "passed": 19,
+      "total": 19
+    },
+    "installed_package_flow": "pass",
+    "codex_plugin_validation": "pass"
+  },
+  "synthetic_panel_boundary": "No real users were recruited and no adoption, star, download, or satisfaction claim is made.",
+  "logo_routing_repair_review": {
+    "status": "pass",
+    "review_path": "private maintainer evidence; excluded from the public candidate",
+    "review_sha256": "98d39eb4c1c47a71b27224f0d0224b286a01ae3e01019a11e1227823479f5f03",
+    "delta_review_sha256": "39e20e564e9863c6e8959ebc56b2b2ec6539f70c6940b3111efca2a0831cf792",
+    "route": "premium_super",
+    "provider_id": "nemotron_3_super",
+    "fallback_used": false,
+    "community_panel_size": 6,
+    "four_vs_five_defect_status": "closed"
+  },
+  "visual_only_revision_binding": {
+    "status": "operator_selected_and_deterministically_validated",
+    "bound_at": "2026-08-21T08:12:00-04:00",
+    "scope": "Agent Smith palette canonical master, brand tokens, opaque-source renderer support, deterministic derivatives, and package validation only; no plugin behavior change",
+    "canonical_master_sha256": "4ca4186ac0b3f73d20e2d32890fa42764f7b65abb4e1bc078a8f745295362dd3",
+    "publication_action": "none"
+  },
+  "publication_action": "none"
+}

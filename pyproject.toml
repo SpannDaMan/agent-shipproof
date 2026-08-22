@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-shipproof"
+version = "0.1.1"
+description = "Record portable evidence of observed commands, files, and Git state"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Orbral"}]
+keywords = ["codex", "agents", "receipts", "verification", "git"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/SpannDaMan/agent-shipproof"
+Repository = "https://github.com/SpannDaMan/agent-shipproof"
+Issues = "https://github.com/SpannDaMan/agent-shipproof/issues"
+
+[project.scripts]
+shipproof = "shipproof:main"
+
+[tool.setuptools]
+py-modules = ["shipproof"]
+package-dir = {"" = "plugins/agent-shipproof/scripts"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,10 @@
+{
+  "name": "agent-shipproof",
+  "description": "Record portable evidence of observed commands, files, and Git state.",
+  "version": "0.1.1",
+  "author": {"name": "Orbral"},
+  "homepage": "https://github.com/SpannDaMan/agent-shipproof",
+  "repository": "https://github.com/SpannDaMan/agent-shipproof",
+  "license": "MIT",
+  "keywords": ["receipts", "verification", "agents", "claude-code", "local"]
+}

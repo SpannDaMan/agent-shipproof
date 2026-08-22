@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "candidate": "agent-shipproof 0.1.1",
+  "product_revision_sha256": "606b74fed7b02cf1be928deb7f92fe8fa8e5360c836a42de6f518baf85ae367d",
+  "checks": {
+    "required_files": "pass",
+    "text_safety": "pass",
+    "metadata": "pass",
+    "claims_and_behavior": "pass",
+    "assets": "pass",
+    "logo_provenance": "pass",
+    "provider_packages": "pass",
+    "fresh_upgrade_evidence": "pass",
+    "revision_bound_receipts": "pass"
+  },
+  "errors": []
+}

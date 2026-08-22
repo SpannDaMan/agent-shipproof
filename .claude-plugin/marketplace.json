@@ -1,0 +1,14 @@
+{
+  "name": "agent-shipproof",
+  "description": "A focused marketplace for the Agent ShipProof skills-only plugin.",
+  "owner": {"name": "Orbral"},
+  "plugins": [
+    {
+      "name": "agent-shipproof",
+      "source": "./plugins/agent-shipproof",
+      "description": "Record portable evidence of observed commands, files, and Git state.",
+      "version": "0.1.1",
+      "category": "development"
+    }
+  ]
+}

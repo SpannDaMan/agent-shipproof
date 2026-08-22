@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "panel_type": "synthetic_github_community_focus_group",
+  "product": "Agent ShipProof",
+  "target_repository": "SpannDaMan/agent-shipproof",
+  "research_boundary": "Model-simulated developer perspectives; not real users, customers, adoption, downloads, or stars.",
+  "route": {
+    "model_router_route": "premium_super",
+    "provider_id": "nemotron_3_super",
+    "provider_model": "nvidia/nemotron-3-super-120b-a12b",
+    "request_id": "e021b1f30e10497891ed87ded2b15265",
+    "fallback_used": false,
+    "route_contract_ok": true
+  },
+  "overall_verdict": "revise_then_private_pilot",
+  "perspectives": [
+    {
+      "id": 1,
+      "persona": "skeptical Python CLI maintainer",
+      "verdict": "revise_then_private_pilot",
+      "what_excites": "Dependency-free implementation, explicit claim boundaries, and stable exit semantics.",
+      "top_friction": "Path confinement, unsigned-receipt limits, and atomicity need to remain unmistakable."
+    },
+    {
+      "id": 2,
+      "persona": "GitHub Actions and CI operator",
+      "verdict": "revise_then_private_pilot",
+      "what_excites": "Offline behavior, wheel proof, deterministic evals, and CI templates.",
+      "top_friction": "Command-output resource limits and timeout interpretation."
+    },
+    {
+      "id": 3,
+      "persona": "security-minded agent-framework maintainer",
+      "verdict": "revise_then_private_pilot",
+      "what_excites": "Declared claims are not promoted to semantic proof; HMAC limits are disclosed.",
+      "top_friction": "Known-secret redaction coverage and HMAC downgrade misuse resistance."
+    },
+    {
+      "id": 4,
+      "persona": "solo developer using Codex",
+      "verdict": "private_pilot_ready",
+      "what_excites": "Local, small, zero-runtime-dependency evidence capture.",
+      "top_friction": "A copy-paste Codex quick start was needed."
+    },
+    {
+      "id": 5,
+      "persona": "Windows maintainer",
+      "verdict": "revise_then_private_pilot",
+      "what_excites": "Python 3.10+ and Windows CI intent.",
+      "top_friction": "Live symlink creation can require Windows Developer Mode or elevated privilege."
+    },
+    {
+      "id": 6,
+      "persona": "open-source growth and community maintainer",
+      "verdict": "private_pilot_ready",
+      "what_excites": "MIT license, recognizable mini logo, issue templates, and a narrow five-minute demo.",
+      "top_friction": "Contribution and private-pilot boundaries must be directly linked."
+    }
+  ],
+  "cross_panel_findings": [
+    {
+      "severity": "P0",
+      "finding": "Bound command-output resource use and keep receipt excerpts small."
+    },
+    {
+      "severity": "P0",
+      "finding": "Expand and test common secret-shape redaction without claiming comprehensive detection."
+    },
+    {
+      "severity": "P1",
+      "finding": "Keep HMAC key absence, wrong-key, key-id tamper, and signed-to-unsigned downgrade fail closed when authenticated verification is requested."
+    },
+    {
+      "severity": "P2",
+      "finding": "Disclose the Windows live-symlink test privilege gap."
+    }
+  ],
+  "documentation_language_to_reject": [
+    "cryptographic proof of integrity",
+    "guarantees no secret leakage",
+    "sandboxed execution",
+    "non-repudiation or authorship attribution",
+    "detects all tampering",
+    "security attestation or provenance mechanism"
+  ],
+  "publication_authority": "none"
+}

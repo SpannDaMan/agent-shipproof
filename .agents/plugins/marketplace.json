@@ -1,0 +1,14 @@
+{
+  "name": "agent-shipproof",
+  "owner": {"name": "Orbral"},
+  "metadata": {"description": "Record what the agent ran."},
+  "plugins": [
+    {
+      "name": "agent-shipproof",
+      "source": "./plugins/agent-shipproof",
+      "description": "Record portable evidence of observed commands, files, and Git state.",
+      "version": "0.1.1",
+      "category": "Developer Tools"
+    }
+  ]
+}

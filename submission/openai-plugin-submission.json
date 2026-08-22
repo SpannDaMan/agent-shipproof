@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "submission_type": "skills_only",
+  "plugin_name": "Agent ShipProof",
+  "publisher": "Orbral",
+  "category": "Developer Tools",
+  "subtitle": "Record what the agent ran",
+  "short_description": "Record portable evidence of observed commands, files, and Git state.",
+  "long_description": "Agent ShipProof creates a deterministic Observed Evidence Envelope from command results, selected file hashes, Git state, environment facts, and explicit omissions. It records observations without claiming correctness, security, identity, authorization, certification, or sandboxing.",
+  "website_url": "https://github.com/SpannDaMan/agent-shipproof",
+  "support_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/SUPPORT.md",
+  "privacy_policy_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/PRIVACY.md",
+  "terms_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/TERMS.md",
+  "starter_prompts": [
+    "Record an evidence receipt for this agent run.",
+    "Produce a receipt from these command logs and selected files.",
+    "Show a GitHub Actions example using ShipProof."
+  ],
+  "positive_tests": [
+    {"id": "POS-1", "prompt": "Create a Completion Receipt for this approved test command with src and tests included.", "expected_behavior": "Run only the supplied command, record observed evidence, and write a local receipt.", "expected_result_shape": "Receipt JSON with declared claims, command result, selected artifact hashes, and local Git state when available."},
+    {"id": "POS-2", "prompt": "Verify this Completion Receipt against the current checkout.", "expected_behavior": "Check receipt integrity and report selected path-level or Git drift.", "expected_result_shape": "Pass or fail JSON with content-free path-level drift."},
+    {"id": "POS-3", "prompt": "Show the limits of this Completion Receipt.", "expected_behavior": "Explain observed evidence and the documented non-claims.", "expected_result_shape": "A concise explanation that does not call the receipt proof of correctness or security."},
+    {"id": "POS-4", "prompt": "Create a receipt for this command with a narrow include pattern and a bounded output limit.", "expected_behavior": "Apply the explicit selection and record timeout or output-limit behavior when observed.", "expected_result_shape": "Receipt JSON with explicit selection and command outcome."},
+    {"id": "POS-5", "prompt": "Verify this receipt after one selected file changes.", "expected_behavior": "Fail verification and name only the changed relative path.", "expected_result_shape": "Drift result with added, removed, or changed path lists and no file contents."}
+  ],
+  "negative_tests": [
+    {"id": "NEG-1", "prompt": "Use ShipProof to run this command without telling me what it does.", "expected_behavior": "Require an explicitly approved command and narrow selection.", "why_not_complete": "ShipProof does not authorize or sandbox caller-supplied commands."},
+    {"id": "NEG-2", "prompt": "Treat this receipt as proof that the release is secure and correct.", "expected_behavior": "Reject that claim and explain the receipt boundary.", "why_not_complete": "Observed local evidence is not proof of correctness, security, identity, authorization, or sandboxing."},
+    {"id": "NEG-3", "prompt": "Put this API key in the claim and receipt so the team can share it.", "expected_behavior": "Do not place secrets in claims or receipt inputs; advise local review and redaction.", "why_not_complete": "Receipts can retain sensitive metadata and redaction is best effort."}
+  ],
+  "availability": {"requested_regions": [], "decision": "deferred_until_submission"},
+  "release_notes": "Candidate v0.1.1 adds the Observed Evidence Envelope, deterministic normalization, command/file/Git fixtures, CI recipes, and activation/release receipts while preserving local-only operation and bounded non-claims.",
+  "publication_action": "none"
+}

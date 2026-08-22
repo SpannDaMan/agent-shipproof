@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "review_type": "final_private_release_review",
+  "reviewer_type": "simulated_veteran_open_source_maintainer_via_gpt_5_6_sol_pro",
+  "product": "Agent ShipProof",
+  "product_revision_sha256": "44a42d50800af17709292a957fd22f7deee78c9102b52eebc813a06346b5f63f",
+  "evidence_packet_sha256": "ac35a573ce812aed6655ede69a4789fcb7127ec83825d731e3daa1d5674ffa6e",
+  "status": "historical",
+  "current_binding_status": "stale_historical_not_release_evidence",
+  "verdict": "private_pilot_ready",
+  "public_release_ready": false,
+  "private_pilot_completed": false,
+  "open_p0_p1_p2": {
+    "P0": [],
+    "P1": [],
+    "P2": []
+  },
+  "open_p3": [
+    {
+      "id": "ASP-P3-SYMLINK-001",
+      "status": "open_nonblocking",
+      "summary": "Capable-host selected-artifact symlink behavior remains unexercised."
+    },
+    {
+      "id": "ASP-P3-XPLAT-002",
+      "status": "open_nonblocking",
+      "summary": "Cross-platform parity beyond the exercised Windows environment remains unproven."
+    },
+    {
+      "id": "ASP-P3-SNAPSHOT-003",
+      "status": "open_nonblocking",
+      "summary": "Filesystem and Git observations are not an atomic snapshot."
+    },
+    {
+      "id": "ASP-P3-PROCESS-004",
+      "status": "open_nonblocking",
+      "summary": "Subprocess-tree termination and output-ceiling behavior remain incompletely characterized."
+    },
+    {
+      "id": "ASP-P3-REDACT-005",
+      "status": "open_nonblocking",
+      "summary": "Secret redaction remains best effort."
+    }
+  ],
+  "finding_ids": [
+    {
+      "id": "ASP-P3-SYMLINK-001",
+      "status": "open_nonblocking"
+    },
+    {
+      "id": "ASP-P3-XPLAT-002",
+      "status": "open_nonblocking"
+    },
+    {
+      "id": "ASP-P3-SNAPSHOT-003",
+      "status": "open_nonblocking"
+    },
+    {
+      "id": "ASP-P3-PROCESS-004",
+      "status": "open_nonblocking"
+    },
+    {
+      "id": "ASP-P3-REDACT-005",
+      "status": "open_nonblocking"
+    }
+  ],
+  "repair_assessment": {
+    "nested_root_boundary": "pass",
+    "linked_worktree_compatibility": "preserved",
+    "validator_repeatability": "pass"
+  },
+  "portfolio_assessment": {
+    "five_candidate_private_pilot_status": "ready_after_receipt_install_and_two_full_composite_passes",
+    "independent_utility": "pass",
+    "forced_dependency": false,
+    "overlap_risk": "medium"
+  },
+  "review_caveat": "AI-generated simulated-role, revision-specific review of the supplied evidence summary. It is not an independent human audit, certification, endorsement, security assurance, private-pilot completion, demand study, or publication authorization.",
+  "review_method": {
+    "route_details": "private routing details removed from the public candidate",
+    "fallback_used": false,
+    "proof_guard": "pass"
+  },
+  "source_artifacts": {
+    "evidence_packet_path": "private maintainer evidence; excluded from the public candidate",
+    "evidence_packet_sha256": "ac35a573ce812aed6655ede69a4789fcb7127ec83825d731e3daa1d5674ffa6e",
+    "review_path": "private maintainer evidence; excluded from the public candidate",
+    "review_sha256": "e4ed0e0f06d844c8223f6060309c5580d6fb289957839baa70695fafcb5149df",
+    "proof_path": "private maintainer evidence; excluded from the public candidate",
+    "proof_sha256": "6622f9e1708b7124b8c3d91061c8d8f9aeecda663b4614749129da7e50270f1a"
+  },
+  "logo_routing_repair_review": {
+    "status": "pass",
+    "review_path": "private maintainer evidence; excluded from the public candidate",
+    "review_sha256": "98d39eb4c1c47a71b27224f0d0224b286a01ae3e01019a11e1227823479f5f03",
+    "delta_review_sha256": "39e20e564e9863c6e8959ebc56b2b2ec6539f70c6940b3111efca2a0831cf792",
+    "route": "premium_super",
+    "provider_id": "nemotron_3_super",
+    "fallback_used": false,
+    "open_p0_p1_p2": {"P0": [], "P1": [], "P2": []},
+    "four_vs_five_defect_status": "closed",
+    "minor_tonal_modeling_disposition": "accept_private_candidate"
+  },
+  "visual_only_revision_binding": {
+    "status": "operator_selected_and_deterministically_validated",
+    "bound_at": "2026-08-21T08:12:00-04:00",
+    "scope": "Visual-only canonical master and package asset pipeline update; prior functional review findings remain unchanged and no new veteran-review claim is made",
+    "canonical_master_sha256": "4ca4186ac0b3f73d20e2d32890fa42764f7b65abb4e1bc078a8f745295362dd3",
+    "publication_action": "none"
+  },
+  "publication_action": "none"
+}

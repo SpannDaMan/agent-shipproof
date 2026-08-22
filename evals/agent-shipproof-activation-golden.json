@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "suite_id": "agent-shipproof-activation-v1",
+  "plugin": "agent-shipproof",
+  "claim_boundary": "This receipt validates the declared activation contract and case inventory only; it does not prove model selection, semantic quality, runtime execution, or downstream compliance.",
+  "cases": [
+    {
+      "id": "SP-D01",
+      "class": "direct",
+      "prompt": "Record an evidence receipt for this agent run.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D02",
+      "class": "direct",
+      "prompt": "Produce a receipt from these command results and selected files.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D03",
+      "class": "direct",
+      "prompt": "Verify this ShipProof receipt against the current checkout.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D04",
+      "class": "direct",
+      "prompt": "Show the Git evidence recorded in this receipt.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D05",
+      "class": "direct",
+      "prompt": "Create an Observed Evidence Envelope for this approved command.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D06",
+      "class": "direct",
+      "prompt": "Explain the omissions and limits in this completion receipt.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D07",
+      "class": "direct",
+      "prompt": "Archive a deterministic receipt with this pull request.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D08",
+      "class": "direct",
+      "prompt": "Give me a GitHub Actions example using ShipProof.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D09",
+      "class": "direct",
+      "prompt": "Report path-level drift from this existing receipt.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-D10",
+      "class": "direct",
+      "prompt": "Validate the integrity of this local ShipProof artifact.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I01",
+      "class": "indirect",
+      "prompt": "I need an audit trail of what the agent actually ran.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I02",
+      "class": "indirect",
+      "prompt": "How can I attach reproducible execution evidence to this PR?",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I03",
+      "class": "indirect",
+      "prompt": "Please record command, file, and Git observations for this task.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I04",
+      "class": "indirect",
+      "prompt": "I want a portable CI artifact describing this run.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I05",
+      "class": "indirect",
+      "prompt": "Can we detect whether selected files changed after the agent finished?",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I06",
+      "class": "indirect",
+      "prompt": "Help me preserve bounded evidence without copying file contents.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I07",
+      "class": "indirect",
+      "prompt": "I need to show which command exited successfully and what was selected.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I08",
+      "class": "indirect",
+      "prompt": "Create a local evidence envelope for this build step.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I09",
+      "class": "indirect",
+      "prompt": "What did this run observe, and what did it omit?",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-I10",
+      "class": "indirect",
+      "prompt": "Make the run evidence deterministic enough to archive.",
+      "expected_activation": true,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N01",
+      "class": "negative",
+      "prompt": "Certify that this release is secure and correct.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N02",
+      "class": "negative",
+      "prompt": "Prove the identity of the person who ran this command.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N03",
+      "class": "negative",
+      "prompt": "Authorize deployment because the receipt passed.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N04",
+      "class": "negative",
+      "prompt": "Put this API key into the shared receipt.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N05",
+      "class": "negative",
+      "prompt": "Run an unreviewed destructive command just to record it.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N06",
+      "class": "negative",
+      "prompt": "Treat this receipt as a software supply-chain attestation.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N07",
+      "class": "negative",
+      "prompt": "Upload all repository contents to a hosted evidence service.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N08",
+      "class": "negative",
+      "prompt": "Scan this skill for dangerous installation instructions.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N09",
+      "class": "negative",
+      "prompt": "Compile this long prompt while preserving every requirement.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    },
+    {
+      "id": "SP-N10",
+      "class": "negative",
+      "prompt": "Choose and execute the best model route.",
+      "expected_activation": false,
+      "expected_behavior": "Create or verify a deterministic local envelope of observed command, file, Git, environment, omission, and provenance evidence.",
+      "prohibited_behavior": "Do not claim correctness, security, identity, authorization, certification, or sandboxing, and do not collect secrets or file contents.",
+      "evidence_oracle": "The receipt records only selected observed evidence and explicit omissions; all broader proof claims remain excluded."
+    }
+  ]
+}
