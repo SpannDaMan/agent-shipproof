@@ -1,9 +1,9 @@
 ---
 name: agent-shipproof
-description: Record what an agent ran in a deterministic Observed Evidence Envelope covering approved command, selected file, Git, environment, omission, and provenance evidence, or verify a prior receipt for bounded drift.
+description: Use when an approved local command needs a verifiable receipt. Run only that command, record its exit status, selected file hashes, and observed Git state, or verify later path-level drift; never treat the receipt as proof of correctness, security, identity, authorization, or sandboxing.
 ---
 
-# Agent ShipProof
+# Completion Receipt
 
 Use this skill when the user wants a reviewable record of what a coding-agent run actually observed.
 

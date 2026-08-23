@@ -1,6 +1,6 @@
 # Provenance
 
-Agent ShipProof is an original, clean-room public implementation of a local receipt tool. It does not vendor third-party code, private receipts, internal operating doctrine, credentials, prompts, datasets, or Git history.
+Completion Receipt is an original, clean-room public implementation of a local receipt tool. It does not vendor third-party code, private receipts, internal operating doctrine, credentials, prompts, datasets, or Git history.
 
 SHA-256 and HMAC-SHA-256 are standard constructions provided by Python's standard library. The project makes no standards-body certification or remote-attestation claim.
 

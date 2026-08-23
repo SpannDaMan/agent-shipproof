@@ -1,6 +1,6 @@
 # OpenAI Plugin Submission Packet
 
-Agent ShipProof is prepared as a skills-only plugin. It has no MCP server, UI, authentication, credentials, network access, telemetry, or hosted data storage.
+Completion Receipt is prepared as a skills-only plugin. It has no MCP server, UI, authentication, credentials, network access, telemetry, or hosted data storage.
 
 ## Local package
 

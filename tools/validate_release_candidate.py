@@ -313,7 +313,7 @@ def main() -> int:
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     result = run_validation()
-    print(json.dumps(result, indent=2) if args.json else ("PASS: Agent ShipProof release candidate" if result["status"] == "pass" else "FAIL: Agent ShipProof release candidate"))
+    print(json.dumps(result, indent=2) if args.json else ("PASS: Completion Receipt release candidate" if result["status"] == "pass" else "FAIL: Completion Receipt release candidate"))
     return 0 if result["status"] == "pass" else 1
 
 

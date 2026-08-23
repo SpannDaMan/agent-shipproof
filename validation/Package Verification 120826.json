@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "candidate": "agent-shipproof 0.1.1",
-  "product_revision_sha256": "606b74fed7b02cf1be928deb7f92fe8fa8e5360c836a42de6f518baf85ae367d",
+  "product_revision_sha256": "8398651e5187f3253ff04d7fd9126d89ab11708719c0d306de9d6a24bd167fb9",
   "status": "pass",
   "python_version": "3.12",
   "runtime_dependencies": [],
   "wheel": {
     "filename": "agent_shipproof-0.1.1-py3-none-any.whl",
-    "sha256": "8c3e0c930c18a42f8aeed35ea66fa31f95d838769aa912ced19698c95fc0ff97",
-    "bytes": 14246
+    "sha256": "f65c3a9a60797a577f8ef3b9a805eaa8c7935a605b57dc584f07c2881a5b8e4b",
+    "bytes": 14347
   },
   "checks": [
     {

@@ -1,14 +1,16 @@
 {
   "name": "agent-shipproof",
-  "description": "A focused marketplace for the Agent ShipProof skills-only plugin.",
+  "description": "The official Orbral marketplace for Completion Receipt.",
   "owner": {"name": "Orbral"},
   "plugins": [
     {
-      "name": "agent-shipproof",
+      "name": "completion-receipt",
       "source": "./plugins/agent-shipproof",
-      "description": "Record portable evidence of observed commands, files, and Git state.",
+      "description": "Use when an approved local command needs a verifiable receipt with exit status, selected file hashes, observed Git state, and later path-level drift checks.",
       "version": "0.1.1",
-      "category": "development"
+      "category": "development",
+      "keywords": ["completion receipts", "agent verification", "test evidence", "Git drift", "CI"],
+      "tags": ["development", "verification", "git", "local"]
     }
   ]
 }

@@ -9,16 +9,18 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "agent-shipproof"
-SHORT = "Record portable evidence of observed commands, files, and Git state."
+SHORT = "Record what the agent ran."
 LONG = (
-    "Agent ShipProof creates a deterministic Observed Evidence Envelope from command results, selected file hashes, "
-    "Git state, environment facts, and explicit omissions. It records observations without claiming correctness, "
-    "security, identity, authorization, certification, or sandboxing."
+    "Use this when you have an approved local command to run and need a verifiable record of what happened. "
+    "Completion Receipt runs only that command, records its exit status, hashes selected files, captures Git state, "
+    "and later reports added, removed, or changed paths without file contents. Receipt inputs and metadata still need "
+    "local sensitivity review because redaction is best effort. Do not treat the receipt as proof of correctness, "
+    "security, identity, authorization, or sandboxing."
 )
 PROMPTS = [
-    "Record an evidence receipt for this agent run.",
-    "Produce a receipt from these command logs and selected files.",
-    "Show a GitHub Actions example using ShipProof.",
+    "Run this approved test command and create a receipt with its exit status, selected file hashes, and current Git state.",
+    "Verify this receipt against my checkout and list only the selected paths that changed.",
+    "Before I approve this release, explain exactly what this receipt proves and what it does not.",
 ]
 
 
@@ -55,6 +57,8 @@ def validate_packages() -> list[str]:
         errors.append("Codex public description mismatch")
     if interface.get("defaultPrompt") != PROMPTS:
         errors.append("Codex starter prompts mismatch")
+    if "screenshots" in interface:
+        errors.append("skills-only plugin must not declare interface.screenshots")
     if "mcp" in json.dumps(codex).casefold():
         errors.append("Codex manifest must remain skills-only without MCP")
 
@@ -62,17 +66,18 @@ def validate_packages() -> list[str]:
     entry = entries[0] if len(entries) == 1 else {}
     if claude_marketplace.get("owner", {}).get("name") != "Orbral":
         errors.append("Claude marketplace owner mismatch")
-    if entry.get("name") != "agent-shipproof" or entry.get("source") != "./plugins/agent-shipproof" or entry.get("version") != "0.1.1":
+    if entry.get("name") != "completion-receipt" or entry.get("source") != "./plugins/agent-shipproof" or entry.get("version") != "0.1.1":
         errors.append("Claude marketplace entry mismatch")
-    if claude_plugin.get("name") != "agent-shipproof" or claude_plugin.get("version") != "0.1.1":
+    if claude_plugin.get("name") != "completion-receipt" or claude_plugin.get("version") != "0.1.1":
         errors.append("Claude plugin identity mismatch")
-    if claude_plugin.get("author", {}).get("name") != "Orbral" or claude_plugin.get("description") != SHORT:
+    expected_claude_description = "Use when an approved local command needs a verifiable receipt with exit status, selected file hashes, observed Git state, and later path-level drift checks."
+    if claude_plugin.get("author", {}).get("name") != "Orbral" or claude_plugin.get("description") != expected_claude_description:
         errors.append("Claude plugin public metadata mismatch")
 
     if submission.get("schema_version") != "1.0" or submission.get("submission_type") != "skills_only":
         errors.append("OpenAI submission must declare skills_only schema 1.0")
     expected = {
-        "plugin_name": "Agent ShipProof",
+        "plugin_name": "Completion Receipt",
         "publisher": "Orbral",
         "category": "Developer Tools",
         "subtitle": "Record what the agent ran",

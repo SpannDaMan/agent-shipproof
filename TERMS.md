@@ -1,6 +1,6 @@
 # Terms
 
-Agent ShipProof is open-source software licensed under the [MIT License](LICENSE).
+Completion Receipt is open-source software licensed under the [MIT License](LICENSE).
 
 ## No hosted service
 

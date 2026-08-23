@@ -1,8 +1,8 @@
-# Agent ShipProof
+# Completion Receipt
 
 Record what the agent ran.
 
-Agent ShipProof creates a local **Observed Evidence Envelope** inside each new Completion Receipt. It normalizes command outcome, selected file hashes, Git observations, bounded environment facts, explicit omissions, and provenance; verify it later to identify selected path-level drift.
+Use Completion Receipt when you have an approved local command to run and need a verifiable record of what happened. It runs only that command, records its exit status, hashes selected files, captures observed Git state, and later reports added, removed, or changed paths without file contents. Receipt inputs and metadata still need local sensitivity review because redaction is best effort. It is observed evidence, not proof of correctness, security, identity, authorization, or sandboxing.
 
 ## Receipt boundary
 
@@ -64,7 +64,7 @@ Python 3.10 or later is required. Runtime behavior uses the Python standard libr
 
 ## Plugins
 
-Agent ShipProof is skills-only with a local CLI. The Codex and Claude package instructions are in [Codex installation](docs/CODEX-INSTALL.md), [Claude installation](docs/CLAUDE-INSTALL.md), and the [OpenAI submission packet](docs/OPENAI-PLUGIN-SUBMISSION.md). Local package validation does not prove hosted installation, provider acceptance, or directory publication.
+Completion Receipt is skills-only with a local CLI. The Codex and Claude package instructions are in [Codex installation](docs/CODEX-INSTALL.md), [Claude installation](docs/CLAUDE-INSTALL.md), and the [OpenAI submission packet](docs/OPENAI-PLUGIN-SUBMISSION.md). Local package validation does not prove hosted installation, provider acceptance, or directory publication.
 
 See [Privacy](PRIVACY.md), [Terms](TERMS.md), [Support](SUPPORT.md), [Security](SECURITY.md), and the [release evidence contract](docs/RELEASE-EVIDENCE.md).
 

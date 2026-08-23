@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Agent ShipProof: create and verify honest local Completion Receipts."""
+"""Completion Receipt: create and verify honest local records of observed execution."""
 
 from __future__ import annotations
 

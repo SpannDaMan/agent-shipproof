@@ -1,6 +1,6 @@
 # Install in Codex
 
-Agent ShipProof is a skills-only Codex plugin with a bundled local CLI. It does not install an MCP server, request credentials, or make network calls.
+Completion Receipt is a skills-only Codex plugin with a bundled local CLI. It does not install an MCP server, request credentials, or make network calls.
 
 From a local checkout:
 

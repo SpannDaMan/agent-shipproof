@@ -1,6 +1,6 @@
 # Privacy
 
-Agent ShipProof is a local, skills-only plugin and dependency-free command-line tool.
+Completion Receipt is a local, skills-only plugin and dependency-free command-line tool.
 
 ## Data handling
 
@@ -11,6 +11,6 @@ Agent ShipProof is a local, skills-only plugin and dependency-free command-line 
 
 Completion Receipts can intentionally retain command arguments, claims, output excerpts, relative paths, hashes, and local Git metadata. Keep receipts local, inspect and redact them before sharing, and never place credentials or secrets in claims or command arguments.
 
-Host products such as Codex, Claude Code, GitHub, or an operating system have their own terms and telemetry settings. Agent ShipProof does not control or expand them.
+Host products such as Codex, Claude Code, GitHub, or an operating system have their own terms and telemetry settings. Completion Receipt does not control or expand them.
 
 For non-sensitive privacy defects, use the repository issue tracker after publication. See [SECURITY.md](SECURITY.md) and [SUPPORT.md](SUPPORT.md).

@@ -1,7 +1,7 @@
 {
   "status": "pass",
   "candidate": "agent-shipproof 0.1.1",
-  "product_revision_sha256": "606b74fed7b02cf1be928deb7f92fe8fa8e5360c836a42de6f518baf85ae367d",
+  "product_revision_sha256": "8398651e5187f3253ff04d7fd9126d89ab11708719c0d306de9d6a24bd167fb9",
   "checks": {
     "required_files": "pass",
     "text_safety": "pass",

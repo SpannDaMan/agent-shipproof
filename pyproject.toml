@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agent-shipproof"
 version = "0.1.1"
-description = "Record portable evidence of observed commands, files, and Git state"
+description = "Record approved commands, selected file hashes, and Git state in local receipts you can verify later"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [{name = "Orbral"}]
-keywords = ["codex", "agents", "receipts", "verification", "git"]
+keywords = ["agent-verification", "completion-receipts", "test-evidence", "build-proof", "git-drift", "coding-agents", "ci", "codex"]
 dependencies = []
 
 [project.urls]

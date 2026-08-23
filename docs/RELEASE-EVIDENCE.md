@@ -1,6 +1,6 @@
 # Release Evidence Contract
 
-Agent ShipProof binds generated release evidence to a non-self-referential product revision.
+Completion Receipt binds generated release evidence to a non-self-referential product revision.
 
 ## Product revision digest
 

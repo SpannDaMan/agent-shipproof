@@ -1,6 +1,6 @@
 # Install in Claude Code
 
-Agent ShipProof ships as a skills-only Claude Code plugin. It does not install an MCP server, request credentials, or make network calls.
+Completion Receipt ships as a skills-only Claude Code plugin. It does not install an MCP server, request credentials, or make network calls.
 
 After the repository is public:
 

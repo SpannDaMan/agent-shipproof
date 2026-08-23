@@ -1,6 +1,6 @@
 # Generic CI recipe
 
-Install Agent ShipProof from the reviewed checkout, run one explicitly approved command, retain the receipt regardless of the command exit, and let the CI platform archive it.
+Install Completion Receipt from the reviewed checkout, run one explicitly approved command, retain the receipt regardless of the command exit, and let the CI platform archive it.
 
 ```text
 python -m pip install .

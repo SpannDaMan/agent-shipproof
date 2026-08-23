@@ -1,20 +1,20 @@
 {
   "schema_version": "1.0",
   "submission_type": "skills_only",
-  "plugin_name": "Agent ShipProof",
+  "plugin_name": "Completion Receipt",
   "publisher": "Orbral",
   "category": "Developer Tools",
   "subtitle": "Record what the agent ran",
-  "short_description": "Record portable evidence of observed commands, files, and Git state.",
-  "long_description": "Agent ShipProof creates a deterministic Observed Evidence Envelope from command results, selected file hashes, Git state, environment facts, and explicit omissions. It records observations without claiming correctness, security, identity, authorization, certification, or sandboxing.",
+  "short_description": "Record what the agent ran.",
+  "long_description": "Use this when you have an approved local command to run and need a verifiable record of what happened. Completion Receipt runs only that command, records its exit status, hashes selected files, captures Git state, and later reports added, removed, or changed paths without file contents. Receipt inputs and metadata still need local sensitivity review because redaction is best effort. Do not treat the receipt as proof of correctness, security, identity, authorization, or sandboxing.",
   "website_url": "https://github.com/SpannDaMan/agent-shipproof",
   "support_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/SUPPORT.md",
   "privacy_policy_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/PRIVACY.md",
   "terms_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/TERMS.md",
   "starter_prompts": [
-    "Record an evidence receipt for this agent run.",
-    "Produce a receipt from these command logs and selected files.",
-    "Show a GitHub Actions example using ShipProof."
+    "Run this approved test command and create a receipt with its exit status, selected file hashes, and current Git state.",
+    "Verify this receipt against my checkout and list only the selected paths that changed.",
+    "Before I approve this release, explain exactly what this receipt proves and what it does not."
   ],
   "positive_tests": [
     {"id": "POS-1", "prompt": "Create a Completion Receipt for this approved test command with src and tests included.", "expected_behavior": "Run only the supplied command, record observed evidence, and write a local receipt.", "expected_result_shape": "Receipt JSON with declared claims, command result, selected artifact hashes, and local Git state when available."},
@@ -24,11 +24,11 @@
     {"id": "POS-5", "prompt": "Verify this receipt after one selected file changes.", "expected_behavior": "Fail verification and name only the changed relative path.", "expected_result_shape": "Drift result with added, removed, or changed path lists and no file contents."}
   ],
   "negative_tests": [
-    {"id": "NEG-1", "prompt": "Use ShipProof to run this command without telling me what it does.", "expected_behavior": "Require an explicitly approved command and narrow selection.", "why_not_complete": "ShipProof does not authorize or sandbox caller-supplied commands."},
+    {"id": "NEG-1", "prompt": "Use Completion Receipt to run this command without telling me what it does.", "expected_behavior": "Require an explicitly approved command and narrow selection.", "why_not_complete": "Completion Receipt does not authorize or sandbox caller-supplied commands."},
     {"id": "NEG-2", "prompt": "Treat this receipt as proof that the release is secure and correct.", "expected_behavior": "Reject that claim and explain the receipt boundary.", "why_not_complete": "Observed local evidence is not proof of correctness, security, identity, authorization, or sandboxing."},
     {"id": "NEG-3", "prompt": "Put this API key in the claim and receipt so the team can share it.", "expected_behavior": "Do not place secrets in claims or receipt inputs; advise local review and redaction.", "why_not_complete": "Receipts can retain sensitive metadata and redaction is best effort."}
   ],
   "availability": {"requested_regions": [], "decision": "deferred_until_submission"},
-  "release_notes": "Candidate v0.1.1 adds the Observed Evidence Envelope, deterministic normalization, command/file/Git fixtures, CI recipes, and activation/release receipts while preserving local-only operation and bounded non-claims.",
+  "release_notes": "Candidate v0.1.1 now explains the approved-command trigger, the exact receipt contents, later path-level drift checks, and the no-proof/no-sandbox boundary in plain language. It also adds the Observed Evidence Envelope, deterministic normalization, fixtures, CI recipes, and activation/release receipts.",
   "publication_action": "none"
 }

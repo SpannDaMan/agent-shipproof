@@ -1,10 +1,10 @@
-# Agent ShipProof design contract
+# Completion Receipt design contract
 
 Status: private candidate visual authority
 
 ## Product idea
 
-Agent ShipProof turns a run into an inspectable trail. The visual identity is a receipt ribbon passing through two content-addressed nodes—evidence in, evidence out—without seals, medals, signatures, or certification imagery.
+Completion Receipt turns a run into an inspectable trail. The visual identity is a receipt ribbon passing through two content-addressed nodes—evidence in, evidence out—without seals, medals, signatures, or certification imagery.
 
 ## Mark
 
