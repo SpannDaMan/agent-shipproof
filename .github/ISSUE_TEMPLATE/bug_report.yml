@@ -1,0 +1,12 @@
+name: Bug report
+description: Report a Completion Receipt or verification contract defect.
+body:
+  - type: textarea
+    attributes: {label: Minimal safe fixture}
+    validations: {required: true}
+  - type: input
+    attributes: {label: Command and ShipProof exit code}
+    validations: {required: true}
+  - type: textarea
+    attributes: {label: Expected and observed result}
+    validations: {required: true}

@@ -1,0 +1,26 @@
+name: test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.10", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '${{ matrix.python-version }}'}
+      - run: python -B -m unittest discover -s tests -v
+      - run: python -B tools/run_evals.py
+      - run: python -B tools/demo.py
+      - run: python -B tools/validate_provider_packages.py --json
+      - run: python -m pip install .
+      - run: shipproof --version

@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "suite": "agent-shipproof-deterministic-v1",
+  "status": "pass",
+  "passed": 19,
+  "total": 19,
+  "score": 1.0,
+  "cases": [
+    {
+      "id": "unchanged_verifies",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "changed_path_detected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "added_path_detected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "removed_path_detected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "receipt_body_tamper_detected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "exit_code_changes_digest",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "file_hash_changes_digest",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "hmac_round_trip",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "wrong_hmac_key_detected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "hmac_downgrade_rejected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "claim_secret_rejected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "argv_secret_rejected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "include_escape_rejected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "existing_receipt_not_overwritten",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "timeout_recorded_as_124",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "output_limit_recorded_as_125",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "aws_output_redacted",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "outside_receipt_path_rejected",
+      "status": "pass",
+      "error": ""
+    },
+    {
+      "id": "self_consistent_malformed_receipt_rejected",
+      "status": "pass",
+      "error": ""
+    }
+  ],
+  "publication_action": "none",
+  "product_revision_sha256": "8398651e5187f3253ff04d7fd9126d89ab11708719c0d306de9d6a24bd167fb9"
+}

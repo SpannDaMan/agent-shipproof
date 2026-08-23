@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "product": "Agent ShipProof",
+  "product_revision_sha256": "bce24862ab7b77ec6e1c3b4cb2d2c7aa6e8ff0cbe56c4ae57e7fc953efff6cb7",
+  "master_sha256": "faf2ac0f8469865495d96d4de370192d13fe78a48e026982e00c9964af8d940e",
+  "route": "premium_super",
+  "provider_id": "nemotron_3_super",
+  "fallback_used": false,
+  "initial_review_sha256": "98d39eb4c1c47a71b27224f0d0224b286a01ae3e01019a11e1227823479f5f03",
+  "delta_review_sha256": "39e20e564e9863c6e8959ebc56b2b2ec6539f70c6940b3111efca2a0831cf792",
+  "four_vs_five_defect_status": "closed",
+  "open_p0_p1_p2": {"P0": [], "P1": [], "P2": []},
+  "verdict": "historical_visual_review",
+  "current_binding_status": "stale_historical_not_release_evidence",
+  "evidence_boundary": "Synthetic, text-only routed review plus supplied local visual and hash evidence; not a human audit or real-user study.",
+  "public_release_ready": false,
+  "publication_action": "none"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "artifact": "Agent ShipProof transparent master",
+  "status": "accepted",
+  "opaque_parent_sha256": "4ca4186ac0b3f73d20e2d32890fa42764f7b65abb4e1bc078a8f745295362dd3",
+  "transparent_derivative": "Agent ShipProof Transparent Master 220826.png",
+  "transparent_derivative_sha256": "d0d8d27f8061a63f1c675e6ac5d5db332b6098c2b97c924694c127695f7ffe05",
+  "dimensions": {"width": 1254, "height": 1254},
+  "derivation": "Deterministic transparency extraction and safe-fill acceptance from the selected opaque parent.",
+  "non_claim": "The transparent derivative is not claimed to be an unedited original source."
+}

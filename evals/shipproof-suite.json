@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "suite": "agent-shipproof-deterministic-v1",
+  "cases": [
+    "unchanged_verifies",
+    "changed_path_detected",
+    "added_path_detected",
+    "removed_path_detected",
+    "receipt_body_tamper_detected",
+    "exit_code_changes_digest",
+    "file_hash_changes_digest",
+    "hmac_round_trip",
+    "wrong_hmac_key_detected",
+    "hmac_downgrade_rejected",
+    "claim_secret_rejected",
+    "argv_secret_rejected",
+    "include_escape_rejected",
+    "existing_receipt_not_overwritten",
+    "timeout_recorded_as_124",
+    "output_limit_recorded_as_125",
+    "aws_output_redacted",
+    "outside_receipt_path_rejected",
+    "self_consistent_malformed_receipt_rejected"
+  ]
+}

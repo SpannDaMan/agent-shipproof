@@ -1,0 +1,31 @@
+{
+  "name": "agent-shipproof",
+  "version": "0.1.1",
+  "description": "Record approved commands, selected file hashes, and Git state in local receipts you can verify later.",
+  "author": {"name": "Orbral", "url": "https://github.com/SpannDaMan"},
+  "homepage": "https://github.com/SpannDaMan/agent-shipproof",
+  "repository": "https://github.com/SpannDaMan/agent-shipproof",
+  "license": "MIT",
+  "keywords": ["agent-verification", "completion-receipts", "test-evidence", "build-proof", "git-drift", "coding-agents", "ci", "codex"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Completion Receipt",
+    "shortDescription": "Record what the agent ran.",
+    "longDescription": "Use this when you have an approved local command to run and need a verifiable record of what happened. Completion Receipt runs only that command, records its exit status, hashes selected files, captures Git state, and later reports added, removed, or changed paths without file contents. Receipt inputs and metadata still need local sensitivity review because redaction is best effort. Do not treat the receipt as proof of correctness, security, identity, authorization, or sandboxing.",
+    "developerName": "Orbral",
+    "category": "Developer Tools",
+    "capabilities": ["Run one approved local command", "Record exit status and selected file hashes", "Capture observed Git state", "Verify path-level drift without file contents", "Run locally with no credentials"],
+    "websiteURL": "https://github.com/SpannDaMan/agent-shipproof",
+    "privacyPolicyURL": "https://github.com/SpannDaMan/agent-shipproof/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/SpannDaMan/agent-shipproof/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Run this approved test command and create a receipt with its exit status, selected file hashes, and current Git state.",
+      "Verify this receipt against my checkout and list only the selected paths that changed.",
+      "Before I approve this release, explain exactly what this receipt proves and what it does not."
+    ],
+    "brandColor": "#0183E0",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png"
+  }
+}

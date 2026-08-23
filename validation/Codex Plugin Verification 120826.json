@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-shipproof 0.1.1",
+  "product_revision_sha256": "8398651e5187f3253ff04d7fd9126d89ab11708719c0d306de9d6a24bd167fb9",
+  "status": "pass",
+  "exit_code": 0,
+  "validated_plugin_path": "plugins/agent-shipproof",
+  "tool": {
+    "name": "Codex plugin validator",
+    "sha256": "4e84c911479e4d158d723ed8ccc881d3499e580fbf5650e60d379a1a25ac3186",
+    "bytes": 21809
+  },
+  "output": "Plugin validation passed: plugins/agent-shipproof",
+  "publication_action": "none"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-shipproof 0.1.1",
+  "product_revision_sha256": "8398651e5187f3253ff04d7fd9126d89ab11708719c0d306de9d6a24bd167fb9",
+  "status": "pass",
+  "command": "claude plugin validate .",
+  "exit_code": 0,
+  "output_summary": "Claude marketplace manifest validation passed.",
+  "publication_action": "none"
+}

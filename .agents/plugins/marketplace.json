@@ -1,0 +1,15 @@
+{
+  "name": "agent-shipproof",
+  "interface": {"displayName": "Completion Receipt"},
+  "owner": {"name": "Orbral"},
+  "metadata": {"description": "Record what the agent ran in a local receipt."},
+  "plugins": [
+    {
+      "name": "agent-shipproof",
+      "source": "./plugins/agent-shipproof",
+      "description": "Record approved commands, selected file hashes, and Git state in a local receipt.",
+      "version": "0.1.1",
+      "category": "Developer Tools"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-shipproof 0.1.0",
+  "product_revision_sha256": "22b70fd29c7f3ef861575e73f30c99659aaa133f795a0f4b5957e8caec88d4e6",
+  "status": "deferred_not_run",
+  "current_binding_status": "stale_historical_not_release_evidence",
+  "checks": {
+    "required_files": "pass",
+    "text_safety": "pass",
+    "metadata": "pass",
+    "claims_and_behavior": "pass",
+    "assets": "pass",
+    "fresh_commands": "pass",
+    "revision_bound_receipts": "pass"
+  },
+  "errors": [],
+  "release_state": "superseded_by_public_package_preparation",
+  "public_release_ready": false,
+  "publication_action": "none"
+}

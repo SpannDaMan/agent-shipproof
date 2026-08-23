@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "candidate": "agent-shipproof 0.1.1",
+  "product_revision_sha256": "8398651e5187f3253ff04d7fd9126d89ab11708719c0d306de9d6a24bd167fb9",
+  "status": "pass",
+  "python_version": "3.12",
+  "runtime_dependencies": [],
+  "wheel": {
+    "filename": "agent_shipproof-0.1.1-py3-none-any.whl",
+    "sha256": "f65c3a9a60797a577f8ef3b9a805eaa8c7935a605b57dc584f07c2881a5b8e4b",
+    "bytes": 14347
+  },
+  "checks": [
+    {
+      "name": "wheel_and_isolated_install",
+      "status": "pass"
+    },
+    {
+      "name": "pip_check",
+      "status": "pass",
+      "result": "No broken requirements found."
+    },
+    {
+      "name": "installed_version",
+      "status": "pass",
+      "result": "agent-shipproof 0.1.1"
+    },
+    {
+      "name": "installed_cli_create",
+      "status": "pass",
+      "result": "captured"
+    },
+    {
+      "name": "installed_cli_unchanged_verify",
+      "status": "pass",
+      "result": "pass"
+    },
+    {
+      "name": "installed_cli_changed_path",
+      "status": "pass",
+      "result": [
+        "src/answer.txt"
+      ]
+    },
+    {
+      "name": "source_demo",
+      "status": "pass",
+      "result": "drift"
+    }
+  ],
+  "publication_action": "none"
+}
