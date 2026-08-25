@@ -12,9 +12,9 @@
   "privacy_policy_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/PRIVACY.md",
   "terms_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/TERMS.md",
   "starter_prompts": [
-    "Run this approved test command and create a receipt with its exit status, selected file hashes, and current Git state.",
-    "Verify this receipt against my checkout and list only the selected paths that changed.",
-    "Before I approve this release, explain exactly what this receipt proves and what it does not."
+    "We’re about to ship a billing migration, and Finance needs a clear record of what the agent actually ran before they sign off. Run the approved validation command and create a receipt with its exit status, selected file hashes, and current Git state. Do not include file contents or claim the build is correct.",
+    "The engineering agent says the release checks are complete. Verify the receipt against the current checkout and give Product, Finance, and Engineering a concise list of only the selected paths that changed, plus anything the receipt cannot prove.",
+    "Before I approve this deployment, explain what this receipt proves, what changed since it was created, and what still needs independent review."
   ],
   "positive_tests": [
     {"id": "POS-1", "prompt": "Create a Completion Receipt for this approved test command with src and tests included.", "expected_behavior": "Run only the supplied command, record observed evidence, and write a local receipt.", "expected_result_shape": "Receipt JSON with declared claims, command result, selected artifact hashes, and local Git state when available."},
@@ -29,6 +29,6 @@
     {"id": "NEG-3", "prompt": "Put this API key in the claim and receipt so the team can share it.", "expected_behavior": "Do not place secrets in claims or receipt inputs; advise local review and redaction.", "why_not_complete": "Receipts can retain sensitive metadata and redaction is best effort."}
   ],
   "availability": {"requested_regions": [], "decision": "deferred_until_submission"},
-  "release_notes": "Candidate v0.1.1 now explains the approved-command trigger, the exact receipt contents, later path-level drift checks, and the no-proof/no-sandbox boundary in plain language. It also adds the Observed Evidence Envelope, deterministic normalization, fixtures, CI recipes, and activation/release receipts.",
+  "release_notes": "Version 0.1.2 adds operator-approved cross-functional release and Finance examples plus the locked full-bleed Silver Satin logo family while preserving approved-command execution, selected-file hashing, Git-state capture, path-level drift checks, and the no-proof/no-sandbox boundary.",
   "publication_action": "none"
 }

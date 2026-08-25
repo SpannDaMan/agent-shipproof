@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — cross-functional release examples and Silver Satin identity
+
+- Added operator-approved billing-migration, Finance handoff, and deployment-review starter prompts.
+- Promoted the exact Completion Receipt mark over the locked full-bleed Silver Satin marketplace background.
+- Preserved approved-command execution, selected-file hashing, Git-state capture, and receipt non-claims.
+
 ## 0.1.1 — Observed Evidence Envelope
 
 - Added normalized command, artifact, Git, environment, omission, and provenance evidence to new receipts.

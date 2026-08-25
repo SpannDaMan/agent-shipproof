@@ -26,13 +26,17 @@ from validate_provider_packages import validate_packages
 
 TRANSPARENT_MASTER = "plugins/agent-shipproof/assets/Agent ShipProof Transparent Master 220826.png"
 TRANSPARENT_HASH = "d0d8d27f8061a63f1c675e6ac5d5db332b6098c2b97c924694c127695f7ffe05"
+SILVER_MASTER = "plugins/agent-shipproof/assets/Completion Receipt Silver Satin Master 240826.png"
+SILVER_HASH = "30555a9081360d1f1fc63d253e93906375f0b1b7740231cb73fc80dc6c42e18a"
+SILVER_BACKGROUND_HASH = "5ef688ba56bd8e8b185903df3a73262400859f0bb0791009b437f5d13ff8a579"
 OPAQUE_PARENT_HASH = "4ca4186ac0b3f73d20e2d32890fa42764f7b65abb4e1bc078a8f745295362dd3"
 REQUIRED = [
     ".gitignore", "LICENSE", "README.md", "BRAND.md", "CHANGELOG.md", "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "DESIGN.md", "design.tokens.json", "MAINTAINER-PILOT.md", "PRIVACY.md", "PROVENANCE.md", "PUBLICATION-GATE.md", "RELEASE-CHECKLIST.md", "SECURITY.md", "SUPPORT.md", "TERMS.md", "THREAT-MODEL.md", "pyproject.toml", ".agents/plugins/marketplace.json", ".claude-plugin/marketplace.json", ".github/FUNDING.yml", ".github/workflows/test.yml", "docs/CLAUDE-INSTALL.md", "docs/CODEX-INSTALL.md", "docs/OPENAI-PLUGIN-SUBMISSION.md", "docs/RECEIPT-CONTRACT.md", "docs/RELEASE-EVIDENCE.md", "submission/openai-plugin-submission.json", "evals/shipproof-suite.json", "evals/agent-shipproof-activation-golden.json", "plugins/agent-shipproof/.claude-plugin/plugin.json", "plugins/agent-shipproof/.codex-plugin/plugin.json", "plugins/agent-shipproof/receipt.schema.json", "plugins/agent-shipproof/scripts/shipproof.py", "plugins/agent-shipproof/skills/agent-shipproof/SKILL.md", TRANSPARENT_MASTER, "plugins/agent-shipproof/assets/Agent ShipProof Transparent Extraction Receipt 220826.json", "plugins/agent-shipproof/assets/Logo Generation Manifest 140826.json", "plugins/agent-shipproof/assets/icon.png", "plugins/agent-shipproof/assets/logo.png", "plugins/agent-shipproof/assets/logo-dark.png", "plugins/agent-shipproof/assets/screenshot1.png", "plugins/agent-shipproof/assets/social-preview.png", "tests/test_shipproof.py", "tests/test_release_validator.py", "tests/test_activation_golden.py", "tools/demo.py", "tools/generate_release_evidence.py", "tools/release_evidence.py", "tools/render_brand_assets.ps1", "tools/run_evals.py", "tools/validate_provider_packages.py", "tools/validate_release_candidate.py", "tools/validate_activation_golden.py",
-    "docs/GITHUB-ACTIONS.md", "examples/ci/generic-ci.md",
+    "docs/GITHUB-ACTIONS.md", "examples/ci/generic-ci.md", SILVER_MASTER, "plugins/agent-shipproof/assets/Silver Satin Background Master 240826.png",
 ]
 PNG = {
     TRANSPARENT_MASTER: (1254, 1254),
+    SILVER_MASTER: (1254, 1254),
     "plugins/agent-shipproof/assets/icon.png": (512, 512),
     "plugins/agent-shipproof/assets/logo.png": (1024, 1024),
     "plugins/agent-shipproof/assets/logo-dark.png": (1024, 1024),
@@ -169,7 +173,7 @@ def assets() -> list[str]:
         metrics[relative] = metric
         if metric[:2] != expected:
             errors.append(f"{relative}: expected {expected}, got {metric[:2]}")
-    for relative in (TRANSPARENT_MASTER, "plugins/agent-shipproof/assets/icon.png"):
+    for relative in (TRANSPARENT_MASTER,):
         if relative not in metrics:
             continue
         width, height, box, corners, alpha = metrics[relative]
@@ -181,6 +185,12 @@ def assets() -> list[str]:
     master = ROOT / TRANSPARENT_MASTER
     if master.is_file() and hashlib.sha256(master.read_bytes()).hexdigest() != TRANSPARENT_HASH:
         errors.append("transparent master hash mismatch")
+    for relative in (SILVER_MASTER, "plugins/agent-shipproof/assets/icon.png", "plugins/agent-shipproof/assets/logo.png", "plugins/agent-shipproof/assets/logo-dark.png"):
+        if relative not in metrics:
+            continue
+        _, _, _, corners, alpha = metrics[relative]
+        if corners != (255, 255, 255, 255) or alpha[0] != 255 or alpha[1] != 255:
+            errors.append(f"{relative}: opaque full-bleed Silver Satin corners are required")
     return errors
 
 
@@ -194,13 +204,13 @@ def logo_provenance() -> list[str]:
     except (OSError, json.JSONDecodeError) as exc:
         return [f"logo provenance read failed: {exc}"]
     expected = {
-        "canonical_master": TRANSPARENT_MASTER,
-        "master_sha256": TRANSPARENT_HASH,
-        "source_type": "deterministic_transparent_derivative",
-        "source_background_policy": "transparent_source",
-        "opaque_parent_sha256": OPAQUE_PARENT_HASH,
-        "local_edit_status": "background_extraction_and_safe_fill_only",
-        "extraction_receipt": "plugins/agent-shipproof/assets/Agent ShipProof Transparent Extraction Receipt 220826.json",
+        "canonical_master": SILVER_MASTER,
+        "master_sha256": SILVER_HASH,
+        "source_type": "deterministic_exact_mark_composite",
+        "source_background_policy": "opaque full-bleed silver satin",
+        "mark_source_sha256": TRANSPARENT_HASH,
+        "shared_background_sha256": SILVER_BACKGROUND_HASH,
+        "local_edit_status": "background-only deterministic composition",
     }
     for key, value in expected.items():
         if manifest.get(key) != value:
@@ -213,7 +223,7 @@ def logo_provenance() -> list[str]:
         if forbidden in manifest:
             errors.append(f"logo manifest retains private field: {forbidden}")
     renderer = (ROOT / "tools" / "render_brand_assets.ps1").read_text(encoding="utf-8")
-    for control in ("Place-Master", "DrawImage", "master_sha256", "deterministic_transparent_derivative", "transparent_source"):
+    for control in ("deterministic_exact_mark_composite", "opaque full-bleed silver satin", "mark_source_sha256", "shared_background_sha256", "none_verify_only"):
         if control not in renderer:
             errors.append(f"brand renderer is missing source-only control: {control}")
     for forbidden in ("FillEllipse", "FillPolygon", "DrawLines", "DrawPath", "GraphicsPath"):
@@ -229,7 +239,7 @@ def metadata() -> list[str]:
     except (OSError, json.JSONDecodeError) as exc:
         return [f"metadata failed: {exc}"]
     errors: list[str] = []
-    if plugin.get("name") != "agent-shipproof" or plugin.get("version") != "0.1.1" or plugin.get("license") != "MIT":
+    if plugin.get("name") != "agent-shipproof" or plugin.get("version") != "0.1.2" or plugin.get("license") != "MIT":
         errors.append("plugin identity mismatch")
     if marketplace.get("owner", {}).get("name") != "Orbral" or marketplace.get("plugins", [{}])[0].get("source") != "./plugins/agent-shipproof":
         errors.append("marketplace public metadata mismatch")
@@ -305,7 +315,7 @@ def run_validation() -> dict[str, Any]:
         "revision_bound_receipts": receipts(),
     }
     errors = sorted({item for group in checks.values() for item in group})
-    return {"status": "pass" if not errors else "fail", "candidate": "agent-shipproof 0.1.1", "product_revision_sha256": rev(), "checks": {name: "pass" if not values else "fail" for name, values in checks.items()}, "errors": errors}
+    return {"status": "pass" if not errors else "fail", "candidate": "agent-shipproof 0.1.2", "product_revision_sha256": rev(), "checks": {name: "pass" if not values else "fail" for name, values in checks.items()}, "errors": errors}
 
 
 def main() -> int:
