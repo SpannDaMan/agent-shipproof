@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 — OpenAI no-mention prompt compliance
+
+- Removed the leading plugin `@mention` from all three store prompts because OpenAI requires mention-free starter text.
+- Preserved the approved billing migration, cross-functional handoff, and independent-review wording and order.
+- Kept the locked full-bleed Silver Satin marketplace identity unchanged.
+
 ## 0.1.3 — OpenAI starter-prompt limit compliance
 
 - Tightened all three approved receipt examples to 128 characters or fewer for OpenAI's store limit.

@@ -7,7 +7,7 @@
       "name": "completion-receipt",
       "source": "./plugins/agent-shipproof",
       "description": "Use when an approved local command needs a verifiable receipt with exit status, selected file hashes, observed Git state, and later path-level drift checks.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "category": "development",
       "keywords": ["completion receipts", "agent verification", "test evidence", "Git drift", "CI"],
       "tags": ["development", "verification", "git", "local"]

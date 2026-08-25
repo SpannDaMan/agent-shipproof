@@ -125,7 +125,7 @@ def main() -> int:
             "Package Verification 120826.json",
             {
                 "schema_version": "1.0",
-                "candidate": "agent-shipproof 0.1.3",
+                "candidate": "agent-shipproof 0.1.4",
                 "product_revision_sha256": revision,
                 "status": "pass",
                 "python_version": f"{sys.version_info.major}.{sys.version_info.minor}",
@@ -154,7 +154,7 @@ def main() -> int:
         "Codex Plugin Verification 120826.json",
         {
             "schema_version": "1.0",
-            "candidate": "agent-shipproof 0.1.3",
+            "candidate": "agent-shipproof 0.1.4",
             "product_revision_sha256": revision,
             "status": "pass",
             "exit_code": 0,
@@ -175,7 +175,7 @@ def main() -> int:
         "OpenAI Submission Data Verification 220826.json",
         {
             "schema_version": "1.0",
-            "candidate": "agent-shipproof 0.1.3",
+            "candidate": "agent-shipproof 0.1.4",
             "product_revision_sha256": revision,
             "status": "pass",
             "checks": ["skills_only", "public_urls", "developer_display", "three_starter_prompts", "five_positive_cases", "three_negative_cases"],
@@ -186,7 +186,7 @@ def main() -> int:
         "Cross Platform Packaging Review 220826.json",
         {
             "schema_version": "1.0",
-            "candidate": "agent-shipproof 0.1.3",
+            "candidate": "agent-shipproof 0.1.4",
             "product_revision_sha256": revision,
             "status": "pass",
             "checks": ["ubuntu-latest", "macos-latest", "windows-latest", "python-3.10", "python-3.12"],
@@ -204,7 +204,7 @@ def main() -> int:
         "Claude Plugin Verification 220826.json",
         {
             "schema_version": "1.0",
-            "candidate": "agent-shipproof 0.1.3",
+            "candidate": "agent-shipproof 0.1.4",
             "product_revision_sha256": revision,
             "status": "pass",
             "command": "claude plugin validate .",

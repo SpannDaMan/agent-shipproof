@@ -12,9 +12,9 @@
   "privacy_policy_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/PRIVACY.md",
   "terms_url": "https://github.com/SpannDaMan/agent-shipproof/blob/main/TERMS.md",
   "starter_prompts": [
-    "@Completion Receipt Run the approved billing migration check and give Finance the exact command, exit status, and changed files.",
-    "@Completion Receipt Before release, record checks, changed paths, and enforced limits for Product, Finance, and Engineering.",
-    "@Completion Receipt Before deployment, show what ran, what changed, what it proves, and what still needs independent review."
+    "Run the approved billing migration check and give Finance the exact command, exit status, and changed files.",
+    "Before release, record checks, changed paths, and enforced limits for Product, Finance, and Engineering.",
+    "Before deployment, show what ran, what changed, what it proves, and what still needs independent review."
   ],
   "positive_tests": [
     {"id": "POS-1", "prompt": "Create a Completion Receipt for this approved test command with src and tests included.", "expected_behavior": "Run only the supplied command, record observed evidence, and write a local receipt.", "expected_result_shape": "Receipt JSON with declared claims, command result, selected artifact hashes, and local Git state when available."},
@@ -29,6 +29,6 @@
     {"id": "NEG-3", "prompt": "Put this API key in the claim and receipt so the team can share it.", "expected_behavior": "Do not place secrets in claims or receipt inputs; advise local review and redaction.", "why_not_complete": "Receipts can retain sensitive metadata and redaction is best effort."}
   ],
   "availability": {"requested_regions": [], "decision": "deferred_until_submission"},
-  "release_notes": "Version 0.1.3 adds operator-approved cross-functional release and Finance examples plus the locked full-bleed Silver Satin logo family while preserving approved-command execution, selected-file hashing, Git-state capture, path-level drift checks, and the no-proof/no-sandbox boundary.",
+  "release_notes": "Version 0.1.4 adds operator-approved cross-functional release and Finance examples plus the locked full-bleed Silver Satin logo family while preserving approved-command execution, selected-file hashing, Git-state capture, path-level drift checks, and the no-proof/no-sandbox boundary.",
   "publication_action": "none"
 }

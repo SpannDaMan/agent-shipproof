@@ -10,7 +10,7 @@ A Completion Receipt records observable local evidence under a documented constr
 
 The optional HMAC is shared-secret tamper authentication. It is not a public-key signature, identity proof, or attestation.
 
-The envelope deliberately omits absolute paths, credentials, environment-variable values, identity, authorization, and unselected runtime behavior. A valid v0.1.0 receipt remains verifiable; new v0.1.3 receipts require the envelope.
+The envelope deliberately omits absolute paths, credentials, environment-variable values, identity, authorization, and unselected runtime behavior. A valid v0.1.0 receipt remains verifiable; new v0.1.4 receipts require the envelope.
 
 ## Five-minute demo
 
@@ -72,6 +72,6 @@ For immediately usable CI packaging, see the [GitHub Actions recipe](docs/GITHUB
 
 ## Status
 
-`v0.1.3` is the current private candidate. Publication requires fresh activation, schema, receipt, CI-example, and frozen-candidate validation evidence.
+`v0.1.4` is the current private candidate. Publication requires fresh activation, schema, receipt, CI-example, and frozen-candidate validation evidence.
 
 MIT licensed. Public developer display: Orbral.
