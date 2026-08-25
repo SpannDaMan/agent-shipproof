@@ -17,7 +17,7 @@ The product emits a **Completion Receipt**. Never call the receipt an attestatio
 2. Keep secrets out of arguments, claims, command output, and selected artifacts.
 3. Run `shipproof run` only for the explicitly authorized command. It executes with the caller's permissions and is not a sandbox; set a conservative timeout and output ceiling.
 4. Report the observed command exit, selected artifact count, local Git fields, and receipt digest.
-5. For v0.1.2 receipts, review the `observed_evidence` envelope and its explicit omissions before describing coverage.
+5. For v0.1.3 receipts, review the `observed_evidence` envelope and its explicit omissions before describing coverage.
 6. Use `shipproof verify` later to identify added, removed, or changed paths without exposing contents.
 7. Treat any integrity mismatch, missing HMAC key, untrusted selection contract, or tool error as non-passing.
 8. Stop before sharing or uploading a receipt unless the user separately authorizes it after sensitivity review.

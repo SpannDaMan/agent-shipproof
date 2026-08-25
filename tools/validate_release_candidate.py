@@ -239,7 +239,7 @@ def metadata() -> list[str]:
     except (OSError, json.JSONDecodeError) as exc:
         return [f"metadata failed: {exc}"]
     errors: list[str] = []
-    if plugin.get("name") != "agent-shipproof" or plugin.get("version") != "0.1.2" or plugin.get("license") != "MIT":
+    if plugin.get("name") != "agent-shipproof" or plugin.get("version") != "0.1.3" or plugin.get("license") != "MIT":
         errors.append("plugin identity mismatch")
     if marketplace.get("owner", {}).get("name") != "Orbral" or marketplace.get("plugins", [{}])[0].get("source") != "./plugins/agent-shipproof":
         errors.append("marketplace public metadata mismatch")
@@ -315,7 +315,7 @@ def run_validation() -> dict[str, Any]:
         "revision_bound_receipts": receipts(),
     }
     errors = sorted({item for group in checks.values() for item in group})
-    return {"status": "pass" if not errors else "fail", "candidate": "agent-shipproof 0.1.2", "product_revision_sha256": rev(), "checks": {name: "pass" if not values else "fail" for name, values in checks.items()}, "errors": errors}
+    return {"status": "pass" if not errors else "fail", "candidate": "agent-shipproof 0.1.3", "product_revision_sha256": rev(), "checks": {name: "pass" if not values else "fail" for name, values in checks.items()}, "errors": errors}
 
 
 def main() -> int:
