@@ -1,7 +1,7 @@
 {
   "name": "completion-receipt",
   "description": "Use when an approved local command needs a verifiable receipt with exit status, selected file hashes, observed Git state, and later path-level drift checks.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {"name": "Orbral"},
   "homepage": "https://github.com/SpannDaMan/agent-shipproof",
   "repository": "https://github.com/SpannDaMan/agent-shipproof",

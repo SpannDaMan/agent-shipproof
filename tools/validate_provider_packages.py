@@ -18,9 +18,9 @@ LONG = (
     "security, identity, authorization, or sandboxing."
 )
 PROMPTS = [
-    "Run this approved test command and create a receipt with its exit status, selected file hashes, and current Git state.",
-    "Verify this receipt against my checkout and list only the selected paths that changed.",
-    "Before I approve this release, explain exactly what this receipt proves and what it does not.",
+    "We’re about to ship a billing migration, and Finance needs a clear record of what the agent actually ran before they sign off. Run the approved validation command and create a receipt with its exit status, selected file hashes, and current Git state. Do not include file contents or claim the build is correct.",
+    "The engineering agent says the release checks are complete. Verify the receipt against the current checkout and give Product, Finance, and Engineering a concise list of only the selected paths that changed, plus anything the receipt cannot prove.",
+    "Before I approve this deployment, explain what this receipt proves, what changed since it was created, and what still needs independent review.",
 ]
 
 
@@ -49,7 +49,7 @@ def validate_packages() -> list[str]:
         return [f"provider package read failed: {exc}"]
 
     interface = codex.get("interface", {})
-    if codex.get("name") != "agent-shipproof" or codex.get("version") != "0.1.1":
+    if codex.get("name") != "agent-shipproof" or codex.get("version") != "0.1.2":
         errors.append("Codex manifest identity mismatch")
     if interface.get("developerName") != "Orbral" or interface.get("category") != "Developer Tools":
         errors.append("Codex public display metadata mismatch")
@@ -66,9 +66,9 @@ def validate_packages() -> list[str]:
     entry = entries[0] if len(entries) == 1 else {}
     if claude_marketplace.get("owner", {}).get("name") != "Orbral":
         errors.append("Claude marketplace owner mismatch")
-    if entry.get("name") != "completion-receipt" or entry.get("source") != "./plugins/agent-shipproof" or entry.get("version") != "0.1.1":
+    if entry.get("name") != "completion-receipt" or entry.get("source") != "./plugins/agent-shipproof" or entry.get("version") != "0.1.2":
         errors.append("Claude marketplace entry mismatch")
-    if claude_plugin.get("name") != "completion-receipt" or claude_plugin.get("version") != "0.1.1":
+    if claude_plugin.get("name") != "completion-receipt" or claude_plugin.get("version") != "0.1.2":
         errors.append("Claude plugin identity mismatch")
     expected_claude_description = "Use when an approved local command needs a verifiable receipt with exit status, selected file hashes, observed Git state, and later path-level drift checks."
     if claude_plugin.get("author", {}).get("name") != "Orbral" or claude_plugin.get("description") != expected_claude_description:

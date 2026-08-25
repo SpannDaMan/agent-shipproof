@@ -1,6 +1,6 @@
 {
   "name": "agent-shipproof",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Record approved commands, selected file hashes, and Git state in local receipts you can verify later.",
   "author": {"name": "Orbral", "url": "https://github.com/SpannDaMan"},
   "homepage": "https://github.com/SpannDaMan/agent-shipproof",
@@ -19,9 +19,9 @@
     "privacyPolicyURL": "https://github.com/SpannDaMan/agent-shipproof/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/SpannDaMan/agent-shipproof/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Run this approved test command and create a receipt with its exit status, selected file hashes, and current Git state.",
-      "Verify this receipt against my checkout and list only the selected paths that changed.",
-      "Before I approve this release, explain exactly what this receipt proves and what it does not."
+      "We’re about to ship a billing migration, and Finance needs a clear record of what the agent actually ran before they sign off. Run the approved validation command and create a receipt with its exit status, selected file hashes, and current Git state. Do not include file contents or claim the build is correct.",
+      "The engineering agent says the release checks are complete. Verify the receipt against the current checkout and give Product, Finance, and Engineering a concise list of only the selected paths that changed, plus anything the receipt cannot prove.",
+      "Before I approve this deployment, explain what this receipt proves, what changed since it was created, and what still needs independent review."
     ],
     "brandColor": "#0183E0",
     "composerIcon": "./assets/icon.png",
