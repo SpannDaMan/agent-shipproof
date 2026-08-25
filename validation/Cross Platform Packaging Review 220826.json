@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "candidate": "agent-shipproof 0.1.2",
-  "product_revision_sha256": "c2f1b1aa3c471858b59a1c3ebabc6610c6836283df4d3df9371c7a40d2dc0383",
+  "candidate": "agent-shipproof 0.1.3",
+  "product_revision_sha256": "6761cf601cb590543fecb31e4718cd4e46d6e78b42a7bba7236169884cda3f6e",
   "status": "pass",
   "checks": [
     "ubuntu-latest",

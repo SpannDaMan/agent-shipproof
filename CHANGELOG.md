@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 — OpenAI starter-prompt limit compliance
+
+- Tightened all three approved receipt examples to 128 characters or fewer for OpenAI's store limit.
+- Preserved the billing migration, cross-functional handoff, and independent-review scenarios.
+- Kept the locked full-bleed Silver Satin marketplace identity unchanged.
+
 ## 0.1.2 — cross-functional release examples and Silver Satin identity
 
 - Added operator-approved billing-migration, Finance handoff, and deployment-review starter prompts.

@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "candidate": "agent-shipproof 0.1.2",
-  "product_revision_sha256": "c2f1b1aa3c471858b59a1c3ebabc6610c6836283df4d3df9371c7a40d2dc0383",
+  "candidate": "agent-shipproof 0.1.3",
+  "product_revision_sha256": "6761cf601cb590543fecb31e4718cd4e46d6e78b42a7bba7236169884cda3f6e",
   "status": "pass",
   "python_version": "3.12",
   "runtime_dependencies": [],
   "wheel": {
-    "filename": "agent_shipproof-0.1.2-py3-none-any.whl",
-    "sha256": "58f40b88aafb97aa3de807bd75f3e48e2845fd85f7767aa412112b71e5f29877",
-    "bytes": 14357
+    "filename": "agent_shipproof-0.1.3-py3-none-any.whl",
+    "sha256": "8d8c9d5db169d0545aad0d4ee23f098933d684dbe67d748dce641435353e156d",
+    "bytes": 14356
   },
   "checks": [
     {
@@ -23,7 +23,7 @@
     {
       "name": "installed_version",
       "status": "pass",
-      "result": "agent-shipproof 0.1.2"
+      "result": "agent-shipproof 0.1.3"
     },
     {
       "name": "installed_cli_create",

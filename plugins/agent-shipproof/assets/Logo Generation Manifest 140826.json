@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "product": "Completion Receipt",
-  "release_version": "0.1.2",
+  "release_version": "0.1.3",
   "selected_direction": "Silver Satin full-bleed",
   "canonical_master": "plugins/agent-shipproof/assets/Completion Receipt Silver Satin Master 240826.png",
   "master_sha256": "30555a9081360d1f1fc63d253e93906375f0b1b7740231cb73fc80dc6c42e18a",
