@@ -8,7 +8,7 @@
       "name": "agent-shipproof",
       "source": "./plugins/agent-shipproof",
       "description": "Record approved commands, selected file hashes, and Git state in a local receipt.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "category": "Developer Tools"
     }
   ]

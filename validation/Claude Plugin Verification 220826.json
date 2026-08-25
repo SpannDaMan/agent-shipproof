@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "candidate": "agent-shipproof 0.1.3",
-  "product_revision_sha256": "390bf661232bc5f494dca031917b6ec06c3739079ee73451d8a5307351af54af",
+  "candidate": "agent-shipproof 0.1.4",
+  "product_revision_sha256": "cc2ed8d7917a6a52c1c615124f53ea91d7796fef3d6377799b951910cff8423c",
   "status": "pass",
   "command": "claude plugin validate .",
   "exit_code": 0,
